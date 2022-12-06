@@ -1,0 +1,18 @@
+@import '../../../styles/dependency';
+
+.dots{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.dot{
+    width: 4px;
+    height: 4px;
+    display: flex;
+    border-radius: 50%;
+    background-color: $gray;
+}
+[data-theme='light'] .dot{
+    background-color: $dark;
+  }
+  

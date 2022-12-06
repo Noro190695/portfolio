@@ -1,0 +1,45 @@
+@import '../../../styles/dependency';
+
+.block{
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+
+.item{
+    box-sizing: border-box;
+    display: flex;
+    width: 50%;
+    border: 1px solid $turqoise;
+    position: absolute;
+
+    span{
+        width: 50%;
+        height: calc(50% - 10px);
+        border: 1px solid $turqoise;
+        position: absolute;
+    }
+
+    &:first-child{
+        bottom: 0;
+        left: 1px;
+
+        span{
+            right: -1px;
+            bottom: 19px;
+        }
+        
+    }
+    &:last-child{
+        top: 0;
+        right: 0;
+        span{
+            left: -1px;
+            top: 19px;
+        }
+    }
+}
+
+.simple-scure{
+    border: 1px solid $gray;
+}

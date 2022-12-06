@@ -1,0 +1,37 @@
+@import "../../styles/dependency";
+.title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+
+  .line {
+    display: block;
+    flex: 1 1 auto;
+    height: 2px;
+    margin-left: 16px;
+    transform-origin: left;
+    background-color:  $turqoise;
+    // animation: line 10s linear infinite alternate;
+  }
+  a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $light;
+    transition: .3s;
+
+    &:hover{
+        color: $magenta;
+    }
+  }
+}
+
+// @keyframes line {
+//   from {
+//     transform: scale(0.1);
+//   }
+//   to {
+//     transform: scale(1);
+//   }
+// }

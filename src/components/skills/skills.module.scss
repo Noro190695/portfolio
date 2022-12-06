@@ -1,0 +1,78 @@
+@import "../../styles/dependency";
+
+.skills {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: relative;
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include mobile {
+      width: 100%;
+    }
+   
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    min-width: 200px;
+    border: 1px solid $gray;
+    @include mobile {
+      max-width: unset;
+      min-width: unset;
+      width: 100%;
+    }
+
+    &__title {
+      display: flex;
+      padding: 8px;
+      border-bottom: 1px solid $gray;
+    }
+
+    &__content {
+      max-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px;
+      > span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+  }
+
+  .bg{
+    position: absolute;
+    @include mobile{
+      display: none;
+    }
+    &:nth-child(1){
+      top: 50px;
+      left: 32px;
+    }
+    &:nth-child(2){
+      top: 155px;
+      left: 210px;
+    }
+    &:nth-child(3){
+      top: 12px;
+      left: 260px;
+    }
+    &:nth-child(4){
+      top: 205px;
+      left: 330px;
+    }
+    &:nth-child(5){
+      top: 180px;
+      left: 32px;
+    }
+  }
+}

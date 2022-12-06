@@ -1,0 +1,34 @@
+@import "../../styles/dependency";
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 560px;
+    gap: 16px;
+
+    input, textarea{
+        padding: 8px;
+        font-size: 16px;
+        line-height: 21px;
+        background: none;
+        border: 1px solid $gray;
+        color: $light;
+
+        &::placeholder{
+            color: $gray;
+        }
+    }
+    textarea{
+        height: 120px;
+        resize: none;
+    }
+    .nofull{
+        width: calc((100% - 16px) / 2);
+        @include mobile{
+            width: 100%;
+        }
+    }
+    .full{
+        width: 100%;
+    }
+}

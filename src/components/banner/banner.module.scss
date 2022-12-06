@@ -1,0 +1,107 @@
+@import "../../styles/dependency";
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  @include breackpoint{
+    flex-direction: column;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        font-size: 32px;
+        font-weight: 600;
+        color: $light;
+        line-height: 42px;
+
+        @include breackpoint{
+          height: 100px;
+        }
+    }
+    p{
+        max-width: 430px;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 32px 0 24px 0;
+        line-height: 25px;
+        color: $gray;
+    }
+  }
+  &-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+    position: relative;
+    @include breackpoint{
+      min-width: 100%;
+      justify-content: flex-end;
+    }
+    &-bg{
+        position: absolute;
+        &:nth-child(1){
+            left: 0;
+            top: 85px;
+            z-index: 1;
+            @include breackpoint{
+              top: 0px;
+              left: -10px;
+            }
+        }
+        &:nth-child(2){
+            right: 0;
+            bottom: 95px;
+            z-index: 3;
+        }
+    }
+    img {
+      min-width: 100%;
+      object-fit: contain;
+      z-index: 2;
+      @include breackpoint{
+        min-width: unset;
+        width: 100%;
+        height: auto;
+      }
+    }
+    &__desc {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      width: 90%;
+      background-color: $dark;
+      border: 1px solid $gray;
+      color: $gray;
+      font-size: 16px;
+      @include mobile{
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding-left: 32px;
+      }
+      span{
+        color: $light;
+        font-weight: 500;
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: $turqoise;
+        @include mobile{
+          position: absolute;
+          left: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          height: calc(100% - 24px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import "./fonts";
+@import "./dependency";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: none;
+}
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body {
+  font-family: $font;
+  position: relative;
+  color: $light;
+  background: $dark;
+}
+
+.container {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 170px;
+  overflow-x: hidden;
+  @include breackpoint {
+    padding: 0 16px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+  padding: 60px 0 110px 0;
+
+  @include mobile {
+    gap: 60px;
+  }
+}
+
+.unic-text {
+  color: $turqoise;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  max-width: fit-content;
+  // white-space: nowrap;
+  width: auto;
+  gap: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: $font;
+  color: $light;
+  border: 1px solid $turqoise;
+  background: none;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+.scroll-style {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $light;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $turqoise;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($color: $turqoise, $amount: 20);
+  }
+}
+
+
+.swiper-pagination{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 20px;
+
+  .swiper-pagination-bullet{
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background: $button-hover;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: $turqoise;
+  }
+}
