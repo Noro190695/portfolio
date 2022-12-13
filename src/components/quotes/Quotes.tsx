@@ -12,13 +12,13 @@ export const Quotes = () => {
           <span className={class_name(style["quotes-icon"])}>
             <QuotesIcon />
           </span>
-          <p>With great power comes great electricity bill</p>
+          <p>Intelligence is the ability to avoid doing work, yet getting the work done.</p>
           <span className={class_name(style["quotes-icon"])}>
             <QuotesIcon />
           </span>
         </div>
         <div className={class_name(style.author)}>
-          <p>- Dr. Who</p>
+          <p>- L. Torvalds</p>
         </div>
       </div>
     </div>

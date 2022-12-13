@@ -15,7 +15,7 @@ export const Banner = () => {
     <section className={bannerClassName}>
       <div className={class_name(style["banner-content"])}>
         <h1>
-          Hello, I&apos;m is a
+          Hello, I&apos;m  a
           <span className="unic-text"> full-stack developer.</span>
         </h1>
         <p>
