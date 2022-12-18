@@ -37,7 +37,7 @@ export const Banner = () => {
           src={person.src}
           width={person.width}
           height={person.height}
-          alt="person"
+          alt="person 1"
         />
         <p className={class_name(style["banner-img__desc"])}>
           Currently working on <span>Portfolio</span>
