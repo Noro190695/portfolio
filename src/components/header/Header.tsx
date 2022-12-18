@@ -14,6 +14,19 @@ async function getData() {
   return data;
 }
 
+const validateEmail = (email: string) => {
+  const mail =  String(email)
+  .toLowerCase()
+  .match(
+    /\S+@\S+\.\S+/
+  )
+  if (mail) {
+    return mail[0].split('//')[1]
+  }
+  return null;
+};
+
+
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const menuClassName = class_name({
@@ -74,7 +87,7 @@ export const Header = () => {
                                       className={style['header-media-item']}
                                   >
                                       <a
-                                          href={item.url}
+                                          href={validateEmail(item.url) !== null ? `mailto:${validateEmail(item.url)}`: item.url}
                                           className={style['header-media-link']}
                                           target='_blank'
                                           rel="noreferrer"
