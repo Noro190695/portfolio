@@ -22,9 +22,9 @@ export const Banner = () => {
           I can create a site of any complexity from 0 to the end,{" "}
           <span className="unic-text">with backend and frontend.</span>
         </p>
-        <button className="btn">
+        {/* <button className="btn">
           Read more {'->'}
-        </button>
+        </button> */}
       </div>
       <div className={class_name(style["banner-img"])}>
         <div className={class_name(style["banner-img-bg"])}>
