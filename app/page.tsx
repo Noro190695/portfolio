@@ -1,6 +1,5 @@
 'use client';
 import '../src/styles/globals.scss';
-
 import { Banner } from '../src/components/banner/Banner';
 import { Quotes } from '../src/components/quotes/Quotes';
 import { Title } from '../src/components/title/Title';
@@ -9,11 +8,23 @@ import { Skills } from '../src/components/skills/Skills';
 import { About } from '../src/components/about/About';
 import { Contact } from '../src/components/contact/Contact';
 import { IData } from '../src/interfaces/interfaces';
-import { useContext } from 'react';
-import { DataContext } from './layout';
+import { useEffect, useState } from 'react';
+import { defaultData, instance } from '../src/api/api';
+async function getData() {
+    const data = await instance.get('/api/v1');
+    return data;
+}
+
 
 export default function Home() {
-    const data: IData = useContext(DataContext);
+    const [data, setData] = useState<IData>(defaultData);
+
+    useEffect(() => {
+        getData().then((d) => {
+            setData(d.data);
+        });
+    }, []);
+    
     return (
         <div className='content'>
             <div className='block' id='home'>

@@ -3,11 +3,17 @@
 import style from './header.module.scss';
 import Logo from '../../images/svg/Logo.svg';
 import class_name from 'classnames';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { apiUrl } from '../../api/api';
 import { DataContext } from '../../../app/layout';
 import { IData } from '../../interfaces/interfaces';
 import Image from 'next/image';
+import { instance, defaultData } from '../../api/api';
+
+async function getData() {
+  const data = await instance.get('/api/v1');
+  return data;
+}
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +25,13 @@ export const Header = () => {
         [style.burger]: true,
         [style['burger-active']]: isOpen,
     });
+    const [data, setData] = useState<IData>(defaultData);
 
-    const data: IData = useContext(DataContext);
+    useEffect(() => {
+        getData().then((d) => {
+            setData(d.data);
+        });
+    }, []);
 
     return (
         <header className={style.header}>
