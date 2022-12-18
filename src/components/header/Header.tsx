@@ -3,9 +3,8 @@
 import style from './header.module.scss';
 import Logo from '../../images/svg/Logo.svg';
 import class_name from 'classnames';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { apiUrl } from '../../api/api';
-import { DataContext } from '../../../app/layout';
 import { IData } from '../../interfaces/interfaces';
 import Image from 'next/image';
 import { instance, defaultData } from '../../api/api';
